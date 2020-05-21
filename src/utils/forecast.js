@@ -15,7 +15,7 @@ const forecast = (latitude, longitude, callback) => {
         else {
             const data = body;
             const condition = data.hourly[0].weather[0].description.slice(0, 1).toUpperCase() + data.hourly[0].weather[0].description.slice(1);  
-            callback(undefined, (condition + ' now. It is currently ' + data.current.temp + ' degrees out there. ' + 'There is ' + data.current.humidity + '% chance of rain'));
+            callback(undefined, (condition + ' now. It is currently ' + data.current.temp + ' degrees out there. ' + 'There is ' + data.current.humidity + '% chance of rain.' + ' Temperature range is ' + data.daily[0].temp.max + ' degrees Max. and ' + data.daily[0].temp.min + ' degrees Min. for today!'));
         }
     })
 };
